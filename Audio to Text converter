@@ -1,0 +1,8 @@
+# First of all import the speech_recognition library using pip install SpeechRecognition
+import speech_recognition as sr
+song=sr.AudioFile("03.-Na-Kajre-Ki.wav") #Import the audio file you need
+recognizer=sr.Recognizer()
+with song as source:
+    song=recognizer.record(source,duration=120,offset=0) #Set to time the ending time as duration in seconds and starting time using offset
+text_toprint=recognizer.recognize_google(song,language="hi-IN") #I want the audio in the Hindi Language
+print(text_toprint)
